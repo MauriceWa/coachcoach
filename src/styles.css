@@ -1,0 +1,118 @@
+:root {
+  --lol-blue: #010a13;
+  --lol-gold: #c8aa6e;
+  --lol-gold-bright: #f0e6d2;
+  --lol-dark-blue: #091428;
+  --lol-medium-blue: #0a323c;
+  --lol-accent-blue: #005a82;
+  --text-primary: #f0e6d2;
+  --text-secondary: #a09b8c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--lol-blue);
+  background-image: linear-gradient(rgba(1, 10, 19, 0.85), rgba(1, 10, 19, 0.85)), url('/lol map.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: var(--text-primary);
+  font-family: "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient(to top, var(--lol-blue), transparent);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1, h2, h3 {
+  font-family: 'Beaufort for LOL', serif;
+  text-transform: uppercase;
+  color: var(--lol-gold);
+  letter-spacing: 2px;
+}
+
+a {
+  color: var(--lol-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--lol-gold-bright);
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lol-blue);
+  border-left: 1px solid var(--lol-medium-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--lol-gold);
+  border: 3px solid var(--lol-blue);
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--lol-gold-bright);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lol-gold) var(--lol-blue);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--lol-gold);
+  color: var(--lol-blue);
+  padding: 12px 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background-color: var(--lol-gold-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(200, 170, 110, 0.4);
+}

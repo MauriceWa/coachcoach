@@ -1,0 +1,281 @@
+<nav>
+  <div class="container">
+    <div class="logo">Botdiff coaching</div>
+
+    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul [class.active]="isMenuOpen()">
+      <li><a href="#about" (click)="isMenuOpen.set(false)">About Us</a></li>
+      <li><a href="#how-it-works" (click)="isMenuOpen.set(false)">How it works</a></li>
+      <li><a href="#services" (click)="isMenuOpen.set(false)">Services</a></li>
+      <li><a href="#partnerships" (click)="isMenuOpen.set(false)">Partnerships</a></li>
+      <li><a href="#contact" (click)="isMenuOpen.set(false)">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1> Pro LoL Coaching</h1>
+      <p>Personalized League of Legends Coaching from Challenger Peak Players</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Book a Session</a>
+        <a href="#services" class="btn btn-secondary">View Services</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="about section-fade">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-header">
+        <h2>About Us</h2>
+      </div>
+
+      <div class="coaches-grid">
+        <article class="coach-profile">
+          <h3>Degemic</h3>
+          <div class="text">
+            <p>A specialist in ADC, Mid, Jungle, and Top lane, Degemic brings a wealth of knowledge and game sense to the team.
+              With a focus on lane control and objective management, he helps players master the macro game.
+            </p>
+          </div>
+          <div class="stats-container">
+            <div class="stats">
+              <div class="stat-item">
+                <span class="value">Challenger</span>
+                <span class="label">Peak Rank</span>
+              </div>
+              <div class="stat-item">
+                <span class="value">100+</span>
+                <span class="label">Hours Coached</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="coach-profile">
+          <h3>KrayonBlaDe</h3>
+          <div class="text">
+            <p>Specializing in Support, ADC, and Jungle, KrayonBlaDe is aggressive yet calculated.
+              His focus on mechanical precision and jungle pathing is the foundation of his coaching methodology.
+             </p>
+          </div>
+          <div class="stats-container">
+            <div class="stats">
+              <div class="stat-item">
+                <span class="value">Grandmaster</span>
+                <span class="label">Peak Rank</span>
+              </div>
+              <div class="stat-item">
+                <span class="value">3000+</span>
+                <span class="label">Hours Coached</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="about-cta centered">
+        <a href="#contact" class="btn">Get Coached by the Best</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="how-it-works section-fade">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Book</h3>
+        <p>Choose your preferred coaching service and schedule a time that works for you.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Connect</h3>
+        <p>We'll meet on Discord to discuss your goals and start the session with your chosen coach.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Improve</h3>
+        <p>Receive actionable feedback and a personalized plan to level up your game.</p>
+      </div>
+    </div>
+    <div class="cta-center">
+      <a href="#services" class="btn">Choose Your Path</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services section-fade">
+  <div class="container">
+    <h2 class="section-title">Coaching Services</h2>
+    <div class="services-slider-container"
+         [style.--left-fade-opacity]="leftFadeOpacity()"
+         [style.--right-fade-opacity]="rightFadeOpacity()">
+      <div class="service-slider" #serviceSlider (scroll)="onSliderScroll()">
+        <div class="service-card">
+          <h3>Match History Review</h3>
+          <ul class="pointers">
+            <li>Quick profile analysis</li>
+            <li>Build & rune check</li>
+            <li>Champion pool advice</li>
+            <li>Basic trend identification</li>
+          </ul>
+          <div class="price">FREE</div>
+          <a href="#contact" class="btn btn-small">Get Free Review</a>
+        </div>
+        <div class="service-card">
+          <h3>VOD Review</h3>
+          <ul class="pointers">
+            <li>Past game analysis</li>
+            <li>Mistake identification</li>
+            <li>Pathing & positioning feedback</li>
+            <li>Decision making review</li>
+          </ul>
+          <div class="price"> €15 / session</div>
+          <a href="#contact" class="btn btn-small">Book VOD Review</a>
+        </div>
+        <div class="service-card">
+          <h3>Live Coaching</h3>
+          <ul class="pointers">
+            <li>Real-time gameplay advice</li>
+            <li>Live shotcalling</li>
+            <li>In-game decision support</li>
+            <li>Immediate performance feedback</li>
+          </ul>
+          <div class="price"> €25 / session</div>
+          <a href="#contact" class="btn btn-small">Book Live Session</a>
+        </div>
+        <div class="service-card">
+          <h3>Drafting Session</h3>
+          <ul class="pointers">
+            <li>Pick/Ban phase strategy</li>
+            <li>Counter-picking mastery</li>
+            <li>Team composition analysis</li>
+            <li>Win condition identification</li>
+          </ul>
+          <div class="price">€25 / session</div>
+          <a href="#contact" class="btn btn-small">Book Draft Clinic</a>
+        </div>
+        <div class="service-card">
+          <h3>You & Friends Coaching</h3>
+          <ul class="pointers">
+            <li>Grab a friend to join!</li>
+            <li>Single coach session</li>
+            <li>Synergy & duo play</li>
+            <li>Perfect for botlane duos</li>
+          </ul>
+          <div class="price"> €30 / session </div>
+          <a href="#contact" class="btn btn-small">BOOK GROUP COACHING</a>
+        </div>
+        <div class="service-card">
+          <h3>Monthly Bundle</h3>
+          <ul class="pointers">
+            <li>4 sessions per week</li>
+            <li>Progress tracking</li>
+            <li>Long term improvement</li>
+          </ul>
+          <div class="price"> €80 / Per Week</div>
+          <a href="#contact" class="btn btn-small">Book Bundle</a>
+        </div>
+
+
+        <div class="service-card">
+          <h3>Pro Bootcamp</h3>
+          <ul class="pointers">
+            <li>Intensive full-day training</li>
+            <li>Mental performance coaching</li>
+            <li>Personalized drill routines</li>
+            <li>End-of-term progress report</li>
+          </ul>
+          <div class="price">€110 / package</div>
+          <a href="#contact" class="btn btn-small">Join Bootcamp</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Team & Org Coaching</h3>
+          <ul class="pointers">
+            <li>Hire both coaches for your team</li>
+            <li>Perfect for organizations</li>
+            <li>Macro & draft strategy</li>
+            <li>Team synergy development</li>
+          </ul>
+          <div class="price">Based on inquiry</div>
+          <a href="#contact" class="btn btn-small">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partnerships" class="partnerships section-fade">
+  <div class="container">
+    <h2>Partnerships</h2>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <a href="https://jungdogsesports.com" target="_blank" rel="noopener">
+          <h3>Jung Dogs Esports</h3>
+          <p>Official Coaching Partner</p>
+          <p class="partner-detail">Currently employing Degemic & KrayonBlaDe as coaches</p>
+          <span class="partner-link">jungdogsesports.com</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact section-fade">
+  <div class="container">
+    <h2 class="contact-title">Book Your Session</h2>
+    <p class="contact-subtitle">Ready to level up? Connect with us through your preferred platform.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="card-header">
+          <span class="icon">💬</span>
+          <h3>Discord</h3>
+        </div>
+        <div class="card-content">
+          <div class="discord-item">
+            <span class="coach-name">Degemic</span>
+            <span class="handle">Degemic#5678</span>
+          </div>
+          <div class="divider"></div>
+          <div class="discord-item">
+            <span class="coach-name">KrayonBlaDe</span>
+            <span class="handle">KrayonBlaDe#1234</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-header">
+          <span class="icon">📧</span>
+          <h3>Email</h3>
+        </div>
+        <div class="card-content">
+          <p>For business inquiries, team coaching (paid hourly/monthly), or long-term mentorship plans:</p>
+          <span class="email-link">botdiffcoaching&#64;gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Degemic & KrayonBlaDe - All Rights Reserved</p>
+    <p>League of Legends is a registered trademark of Riot Games, Inc.</p>
+  </div>
+</footer>
